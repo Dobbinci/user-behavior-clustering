@@ -70,7 +70,7 @@ Each user was converted into a sequence of (50 sessions × 10 features). If a us
 The encoder is a single-layer GRU with a hidden dimension of 64, whose output is mapped to the embedding dimension by a linear layer. The decoder is configured to reconstruct the original sequence from the embedding. The loss uses the masked MSE described in 2.3. Training was performed in PyTorch on a MacBook M3 (MPS), and K-means from scikit-learn was used for clustering. For reproducibility, the seed was fixed at 42. The embedding dimension (8/16/32), teacher forcing (on/off) [5], and the number of clusters k (2–6) were set as experimental variables, and ablation was performed (3.4).
 
 ### 3.3 Training
-<Figure size 700x400 with 1 Axes><img width="690" height="390" alt="image" src="https://github.com/user-attachments/assets/5e5270bc-0532-4a02-b434-87cdd9af343b" />
+<img width="690" height="390" alt="image" src="https://github.com/user-attachments/assets/5e5270bc-0532-4a02-b434-87cdd9af343b" />
 
 The masked MSE loss decreased monotonically and then converged during training (final ≈ 0.105 with teacher forcing on, ≈ 0.170 with it off). The learned embeddings had a per-dimension standard deviation of about 0.27, and no representational collapse—in which all users cluster into a single point—was observed.
 
@@ -114,7 +114,7 @@ Comparing the two dimensions under the final condition (k=4, TF off), the silhou
 
 Teacher forcing is a training technique in which, when the decoder reconstructs the sequence, it receives the ground truth (original) of the immediately preceding cell as input (on). If the ground truth is fed in at every cell, the decoder can reconstruct while relying less on the embedding, leaving room for the embedding to "grow lazy" without sufficiently capturing behavioral information. Conversely, with it off, the decoder must rely on the embedding z to reconstruct, so the embedding is pressured to hold more information.
 
-<Figure size 1400x600 with 2 Axes><img width="1389" height="590" alt="image" src="https://github.com/user-attachments/assets/a681b9a6-26cd-446c-b0d8-6acbe6b5dda7" />
+<img width="1389" height="590" alt="image" src="https://github.com/user-attachments/assets/a681b9a6-26cd-446c-b0d8-6acbe6b5dda7" />
 
 The experimental results also supported off. Quantitatively, at k=4 the silhouette was 0.313 for off, higher than the 0.265 for on, and off stably maintained a level around 0.30 across the k=2–6 range, whereas on declined as k grew. Decisively, when the embeddings were projected into two dimensions with t-SNE [4] for visual comparison, the four clusters under off separated their regions more distinctly than under on. Under on, the boundary between the charge-only group and the charge-plus-relax group was visually blurred and the distinction was ambiguous, whereas under off this boundary was clear. Since all three axes—quantitative, qualitative, and visual—pointed to off, we chose to turn teacher forcing off.
 
