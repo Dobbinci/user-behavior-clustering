@@ -1,5 +1,7 @@
 # Discovering User Behavior Types from Session Sequences: A GRU-Autoencoder Approach
 
+Dabin Lee
+
 ## Introduction
 
 As of 2024, approximately 23% of domestic smartphone users fall into the at-risk group for overdependence [6]. A common technical approach to this problem is to forcibly block specific apps, but such methods provoke evasion and lack sustainability, often leading users to ultimately delete the app altogether.
