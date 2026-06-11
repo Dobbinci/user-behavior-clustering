@@ -200,3 +200,7 @@ We propose three directions for future work. First, verifying whether type disco
 [5] Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press. http://www.deeplearningbook.org
 
 [6] 과학기술정보통신부, 한국지능정보사회진흥원. (2025). *2024년 스마트폰 과의존 실태조사*. 과학기술정보통신부.
+
+## Dopamedi App Link
+[Apple Appstore](https://apps.apple.com/kr/app/id6748566632)  
+[Google Playstore](https://play.google.com/store/apps/details?id=com.rotarelecca.breaktimemanagement&hl=ko)
