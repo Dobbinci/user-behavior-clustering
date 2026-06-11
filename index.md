@@ -1,7 +1,7 @@
 # Discovering User Behavior Types from Session Sequences: A GRU-Autoencoder Approach
 
 ### Dabin Lee
-Presentation Link: https://youtu.be/ZBjhhUdjs1c
+Presentation Link: [Watch on YouTube](https://youtu.be/ZBjhhUdjs1c)
 
 ## Introduction
 
